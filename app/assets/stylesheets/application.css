@@ -1,0 +1,124 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+/*
+from http://www.dwuser.com/education/content/creating-a-floating-navigation-menu/
+*/
+body {
+   background-color: #333;  
+   color: #999;
+   font: 12px/1.4em Arial,sans-serif;
+}
+#wrap {
+   margin: 10px auto;        
+   background: #666;
+   padding: 10px;
+   width: 700px;
+}
+#header {
+   background-color: #666;
+   color: #FFF;
+}
+#logo {
+   font-size: 30px;  
+   line-height: 40px;    
+   padding: 5px;
+}
+#navWrap {
+   height: 30px;
+}
+#nav {
+   padding: 5px;
+   background: #999;    
+}
+#nav ul {
+   margin: 0;
+   padding: 0;    
+}
+#nav li {
+   float: left;
+   padding: 3px 8px;
+/*   background-color: #FFF; */
+   margin: 0 10px 0 0;
+   color: #F00;
+   list-style-type: none;
+}
+#nav li a {
+   color: #F00;  
+   text-decoration: none;    
+}
+#nav li a:hover {
+   text-decoration: underline;   
+}
+br.clearLeft {
+   clear: left;        
+
+#sidebar {
+    width:300px;
+    float:left;
+}
+
+#content {
+    width:724px;
+    float:right;
+    padding-left:24px;
+}
+
+
+/* navigation */
+nav {
+    width:300px;
+    background-color:rgb(240,240,240);
+    border:solid 1px rgb(220,220,220);
+    padding:0 12px;
+}
+
+nav.stick {
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    margin-top:12px;
+}
+
+
+nav ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+nav li {
+
+}
+
+nav li a {
+    color:rgb(50,50,50);
+    font-weight:700;
+}
+
+a.nav-active {
+    color:#ccc;
+}
+
+
+
+hr {
+    border:none;
+    background-color:rgb(220,220,220);
+    height:12px;
+    margin-bottom:18px;
+}
