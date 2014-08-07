@@ -1,0 +1,14 @@
+<%= form_for [@post, @comment] do |f| %>
+<br/>
+Your Name<%= f.text_field :commenter, :required => true %>
+<br/>
+<br/>
+Your Email(will not be shown)<%= f.text_field :email, :required => true %>
+<br/>
+<br/>
+Your Comment<%= f.text_area :comment, :required => true %>
+<% @ip %>
+<%= f.submit "Create Comment", class: 'btn btn-primary' %>
+<% end %>
+
+

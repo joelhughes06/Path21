@@ -333,11 +333,7 @@
       <td><%= post.created_at %></td>
       <td><%= post.updated_at %></td>
       </tr>
-        <% form_for [@post, @comment] do |f| %>
-        <tr>
-        <td><%= f.email %>
-        <% f.submit 'Post your comment', class: 'btn btn-primary' %>
-        <% end %>
+        <%= link_to 'Make a comment', new_comment_path %>
 
 
     <% end %>

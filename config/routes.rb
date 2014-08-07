@@ -4,12 +4,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'pages#front'
+  root 'posts#index'
 
   resources :users
 
   resources :posts do
-      resources :comments
+    resources :comments
   end
 
 
