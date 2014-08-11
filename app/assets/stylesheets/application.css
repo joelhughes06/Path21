@@ -122,3 +122,106 @@ hr {
     height:12px;
     margin-bottom:18px;
 }
+
+
+/* http://www.elated.com/res/File/articles/authoring/css/smooth-fading-image-captions-with-pure-css3/ */
+
+/* Set the article dimensions */
+
+article {
+  width: 800px;
+  padding: 50px;
+  margin: 0 auto;
+  display: block;
+  font-size: 1.2em;
+}
+
+article h2 {
+  line-height: 1.5em;
+}
+
+/* Style the article footer */
+
+footer {
+  font-style: italic;
+  font-size: .9em;
+}
+
+/* Style the figures */
+
+figure {
+  position: relative;
+  display: block;
+  border: 1px solid #333;
+  margin: 5px 0 10px 0;
+}
+
+
+
+/* Style the figure captions, hiding them by default */
+
+figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: .7em;
+  color: #fff;
+  background-color: rgba(0,0,0,.7);
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+}
+
+/* Display the captions on hover */
+
+figure:hover figcaption {
+  opacity: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#aa000000,endColorstr=#aa000000);
+}
+
+/* Add padding and margin to the caption contents */
+
+figcaption * {
+  padding: 0 10px;
+  margin: 0;
+}
+
+figcaption *:first-child {
+  padding-top: 5px;
+}
+figcaption *:last-child {
+  padding-bottom: 5px;
+}
+
+/* Give captions and headings their own font */
+
+figcaption, h1, h2, h3, h4 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Header/footer boxes */
+
+.wideBox {
+  clear: both;
+  text-align: center;
+  margin: 70px;
+  padding: 10px;
+  background: #ebedf2;
+  border: 1px solid #333;
+  line-height: 80%;
+}
+
+.wideBox h1 {
+  font-weight: bold;
+  margin: 20px;
+  color: #666;
+  font-size: 1.5em;
+}
+
+
+
+

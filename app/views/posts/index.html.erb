@@ -8,23 +8,17 @@
   <title>Path21</title>
   
   <link rel='stylesheet' href='assets/bootstrap.css' type='text/css'/>
-
-  <link  href="//fonts.googleapis.com/css?family=Cabin:bold" rel="stylesheet" type="text/css" >
+  <link href="//fonts.googleapis.com/css?family=Cabin:bold" rel="stylesheet" type="text/css" >
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 <!-- circle hover -->
   <link rel="stylesheet" type="text/css" href="assets/demo-circle-hover.css" />
   <link rel="stylesheet" type="text/css" href="assets/common.css" />
   <link rel="stylesheet" type="text/css" href="assets/style2.css" />
-
 <!-- direction aware -->
-
-        <link rel="stylesheet" type="text/css" href="assets/demo-direction-aware.css" />
-        <link rel="stylesheet" type="text/css" href="assets/style-direction-aware.css" />
-        <script src="javascripts/modernizr.custom.97074.js"></script>
-        <noscript><link rel="stylesheet" type="text/css" href="assets/noJS.css"/></noscript>
-
-
-
+  <link rel="stylesheet" type="text/css" href="assets/demo-direction-aware.css" />
+  <link rel="stylesheet" type="text/css" href="assets/style-direction-aware.css" />
+  <script src="javascripts/modernizr.custom.97074.js"></script>
+  <noscript><link rel="stylesheet" type="text/css" href="assets/noJS.css"/></noscript>
 
   <style>
     body {
@@ -34,14 +28,8 @@
 
 <!-- Include jQuery -->
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-
   <script type='text/javascript'>
-  //<![CDATA[ 
-
   /* JavaScript code will go here */
-
-  //]]>  
-
   $(function() {
     // Stick the #nav to the top of the window
     var nav = $('#nav');
@@ -56,7 +44,7 @@
                 position: 'fixed',
                 top: 0,
                 left: nav.offset().left,
-                width: nav.width()
+                width: nav.width(auto)
             });
             isFixed = true;
         }
@@ -70,31 +58,86 @@
     });
   });
   </script>
+
+<script>
+jQuery(document).ready(function ($) {
+
+  $('#checkbox').change(function(){
+    setInterval(function () {
+        moveRight();
+    }, 3000);
+  });
+  
+  var slideCount = $('#slider ul li').length;
+  var slideWidth = $('#slider ul li').width();
+  var slideHeight = $('#slider ul li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+  
+  $('#slider').css({ width: slideWidth, height: slideHeight });
+  
+  $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+  
+    $('#slider ul li:last-child').prependTo('#slider ul');
+
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: + slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    function moveRight() {
+        $('#slider ul').animate({
+            left: - slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+
+});    
+</script>
+
+
+
+
 </head>
 
 
 <body>
+<a name="top" class="smoothScroll">
+</a>
 <div class="row-fluid">
-  <div class="span12">
-    <div id="logo" class="span4">
-      <a name="top" class="smoothScroll">
-        <img src='/assets/logo.png'  style="display: block; margin: auto; height:500px;">
-      </a>
+  <div class="span12" style='background: #002D56; height:300px;'>
+    <div id="logo" class="span3">
+
+        <img src='/assets/logo.png'  style="height:300px;">
+
     </div>
-    <div id="negative-space" class="span4"></div>
-    <div id="top-right-box" class="span4">
+    <div id="negative-space" class="span6"></div>
+    <div id="top-right-box" class="pull-right">
       <a>
-        <img src='/assets/top_right.png' style="display: block; margin: auto; margin-top:25%">
+        <img src='/assets/holy_cross_Bohren_016.jpg' style="height:300px">
       </a>
     </div>    
-    <div id="navWrap" class="span12" style="position: relative; z-index: 2;">
+    <div id="navWrap" class="span12" style="position: relative; z-index: 2;height:300px">
       <div id="nav">
         <ul>
           <li><a href="#services" class="smoothScroll">SERVICES</a></li>
           <li><a href="#portfolio" class="smoothScroll">PORTFOLIO</a></li>
           <li><a href="#team" class="smoothScroll">TEAM</a></li>
           <li><a href="#about" class="smoothScroll">ABOUT</a></li>
-          <li><a href="#contact" class="smoothScroll">CONTACT</a></li>
+          <li><a href="/inquiries/new" class="smoothScroll">CONTACT</a></li>
           <li><a href="#blog" class="smoothScroll">BLOG</a></li>
           <li>
             <a href="#top" class="smoothScroll">
@@ -116,12 +159,8 @@
     <h1 class="separator">WHAT WE DO</h1>
   </div>
 </div>
-<br/>
-
 <div class="row-fluid">
-
   <div class="main">
-
     <ul class="ch-grid" style="position: relative; z-index: 1;">
       <li>
         <div class="ch-item ch-img-1">
@@ -148,9 +187,7 @@
         </div>
       </li>
     </ul>
-    
   </div>
-
 <br/>
 <div class="row-fluid">
       <div class="offset2-5 span4 text-center header">
@@ -238,14 +275,39 @@
 <br/>
 <div class="row-fluid">
   <div class="span12" style="height:100px;width:100%;float:left;">
+    <a name="about" class="smoothScroll"></a>
     <br/>
     <br/>
     <br/>
-        <a name="portfolio" class="smoothScroll"><h1 id="navClear"><div class="separator" style="color:inherit">PHILOSOPHY/PROCESS</div></h1></a>
+      <h1 id="navClear"><div class="separator" style="color:inherit">PHILOSOPHY/PROCESS</div></h1>
   </div>
 </div>
 <br/>
+
+<!-- <h1>Phlilosphy/Process</h1> -->
+
+<div id="slider">
+  <a class="control_next">></a>
+  <a class="control_prev"><</a>
+  <ul>
+    <li>Path21 architecture believes fully in the philosophy of serving others through our expertise in architecture and construction. Our spaces are designed as the places where life happens and people engage with each other in a setting that is both functional and beautiful.</li>
+    <li style="background: #aaa;">SLIDE 2</li>
+    <li>SLIDE 3</li>
+    <li style="background: #aaa;">SLIDE 4</li>
+  </ul>  
+</div>
+
+<!-- 
+<div class="slider_option">
+  <input type="checkbox" id="checkbox">
+  <label for="checkbox">Autoplay Slider</label>
+</div> 
+-->
+
 <br/>
+
+
+<!--
 <div class="row-fluid">
   <div class="offset4-0 span2 text-center header">
   </div>
@@ -261,13 +323,16 @@
   <div class="span1">
     <img src='/assets/right_arrow.png' style="display: block; margin: auto; height:auto; width:90%;padding-top:200%">
   </div>
-
 </div>
-  <div class="span2"></div>
+-->
+
+
+<div class="span2"></div>
 <br/>
 <br/>
+
 <div class="row-fluid">
-  <div class="span12" style="background-color:#ff931e;height:600px;width:100%;float:left;">
+  <div class="span12" style="background-color:#ff931e;height:100%;width:100%;float:left;">
     <a name="team" class="smoothScroll" href="team.html">
       <br/>
       <br/>
@@ -278,8 +343,56 @@
     </a>
       <br/>
       <br/>
+      <div class='row-fluid'>
+        <div style="width:65%;margin-left:auto;margin-right:auto;">
+          <figure style="width: 240px; height: 250px; float: left; margin-right: 20px;margin-bottom: 10px;">
+            <img src="/assets/team_jim_jose.jpg">
+            <figcaption>
+              <h3>About James Jose</h3>
+              <p>James holds a Masters in Architecture, is a LEED Accredited Professional, and member of the American Institute of Architects, having served as Colorado West Chapter President.</p>
+            </figcaption>
+          </figure>
+          <figure style="width: 240px; height: 250px; float: left; margin-right: 20px;margin-bottom: 10px;">
+            <img src="/assets/team_bill_turner.jpg">
+            <figcaption>
+              <h3>About Bill Turner</h3>
+              <p>Bill Turner earned his Masters of Architecture at the University of Colorado, Denver with honors following his B.A. in Business from the University of Denver.</p>
+            </figcaption>
+          </figure>
+          <figure style="width: 240px; height: 250px; float: left; margin-right: 20px;margin-bottom: 10px;">
+            <img src="/assets/team_john_menno.png">
+            <figcaption>
+              <h3>About John Menno</h3>
+              <p>As Chief Operations Officer for Path21 Architecture, John Menno is responsible for the staffing and management of all projects as well as maintaining schedules.</p>
+            </figcaption>
+          </figure>
+          <figure style="width: 240px; height: 250px; float: left; margin-right: 20px;margin-bottom: 10px;">
+            <img src="/assets/team_stephanie_cooper.png">
+            <figcaption>
+              <h3>About Stephanie Cooper</h3>
+              <p>Stephanie is a project manager at Path 21 Architecture with 15 years of health care architecture experience.</p>
+            </figcaption>
+          </figure>
+          <figure style="width: 240px; height: 250px; float: left; margin-right: 20px;margin-bottom: 10px;">
+            <img src="/assets/team_leo_spurgin.png">
+            <figcaption>
+              <h3>About Leo Spurgin</h3>
+              <p>Leo Spurgin has a professional and educational background in healthcare facility design including hospitals, cancer centers, medical office buildings, and hospital renovations.</p>
+            </figcaption>
+          </figure>
+          <figure style="width: 240px; height: 250px; float: left; margin-right: 20px;margin-bottom: 10px;">
+            <img src="/assets/team_emily_sinclair.png">
+            <figcaption>
+              <h3>About Emily Sinclair</h3>
+              <p>Emily Sinclair combines professionalism and dedication to design excellence on every project, along with a genuine caring for each client and their requirements.</p>
+            </figcaption>
+          </figure>                                                  
+        </div>
+      </div>
 
 
+
+<!--
     <div class="row-fluid" style="background-color:#ff931e;height:200px;width:100%;float:left;">
       <div class="span4">
       </div>
@@ -297,6 +410,7 @@
   </div>
 </div>
 <br/>
+
 <div class="row-fluid">
   <div class="span12" style="background-color:#788e87;height:200px;width:100%;float:left;">
     <a name="about" class="smoothScroll"></a>
@@ -305,46 +419,43 @@
 <br/>
 
 <div class="row-fluid">
-  <div id="nav" class="span12" style="background-color:#bebebe;height:200px;width:100%;float:left;">
+
+  <div id="nav" class="span12" style="background-color:#bebebe;height:100%;width:100%;float:left;">
     <a name="contact" class="smoothScroll">
     <br/>
     <br/>
-    <h2>CONTACT</h2>
+    <a href="/inquiries/new"><h2>CONTACT</h2></a>
     </a>
   </div>
+
 </div>
+-->
 <br/>
 <div class="row-fluid">
   <div class="span12" >
     <a name="blog" class="smoothScroll"></a>
     <div class="span3"></div>
     <div class="well span6">
-      <h3>Architecture Today Blog</h3>
-
-  <% @posts.each do |post| %>
-      <tr>
-      <td><%= post.title %></td>
-      <hr/>
-      <td><%= post.description %></td><br/>
-
-      <span class='quiet'><small><%= post.created_at %></td><br/>
-      <td><%= post.updated_at %></td><br/></small></span>
-      </tr>
-      <%= link_to 'Make a comment', new_post_comment_path(post) %><br/><br/><br/>
-    <% end %>
-      <h4>Comments:</h4>
-      <% @posts.comment.each do |x| %>
-      "<%= x.comment %>"
-      <% end %>    
-<br/>
-<br/>
-
-<%= render 'posts/form' %>
-
+      <h2>Path21 Architecture Blog</h2>
+        <% @posts.each do |post| %>
+            <tr>
+            <strong><h3><td><%= post.title %></td></h3></strong>
+            <span class='quiet; pull-right'><small><%= display_datetime(post.created_at) %></td><br/></small></span>
+            <p><%= post.description %></p><br/>
+            </tr>
+            <small><%= link_to 'leave a comment', new_post_comment_path(post) %></small><br/><br/><br/>
+<!--            <h4>Comments:</h4>   -->
+            <% post.comments.each do |x| %>
+            "<%= x.comment %>"
+            <br/>
+            <% end %>
+            <div class="separator-grey"></div>
+        <% end %>
       <br/>
       <br/>
-
-
+      <%= render 'posts/form' %>
+      <br/>
+      <br/>
     </div>
   </div>
 </div>

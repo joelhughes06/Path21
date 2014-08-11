@@ -7,6 +7,185 @@
  *
  * Designed and built with all the love in the world by @mdo and @fat.
  */
+
+
+
+
+
+/* http://www.elated.com/res/File/articles/authoring/css/smooth-fading-image-captions-with-pure-css3/ */
+figure {
+  position: relative;
+  display: block;
+  border: 8px solid #fff;
+  margin: 5px 0 10px 0;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the figure captions, hiding them by default */
+
+figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: .7em;
+  color: #fff;
+  background-color: rgba(0,0,0,.7);
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+}
+
+/* Display the captions on hover */
+
+figure:hover figcaption {
+  opacity: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#aa000000,endColorstr=#aa000000);
+}
+
+/* Add padding and margin to the caption contents */
+
+figcaption * {
+  padding: 0 10px;
+  margin: 0;
+}
+
+figcaption *:first-child {
+  padding-top: 5px;
+}
+figcaption *:last-child {
+  padding-bottom: 5px;
+}
+
+/* Give captions and headings their own font */
+
+figcaption, h1, h2, h3, h4 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Header/footer boxes */
+
+.wideBox {
+  clear: both;
+  text-align: center;
+  margin: 70px;
+  padding: 10px;
+  background: #ebedf2;
+  border: 1px solid #333;
+  line-height: 80%;
+}
+
+.wideBox h1 {
+  font-weight: bold;
+  margin: 20px;
+  color: #666;
+  font-size: 1.5em;
+}
+
+
+
+
+
+
+/* very simple slider http://codepen.io/zuraizm/pen/vGDHl 
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);  
+
+
+html {
+  border-top: 5px solid #fff;
+  background: #58DDAF;
+  color: #2a2a2a;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-weight: 300;
+}
+*/
+
+
+#slider {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+}
+
+#slider ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  list-style: none;
+}
+
+#slider ul li {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 300px;
+  background: #ccc;
+  text-align: center;
+  line-height: 300px;
+}
+
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #2a2a2a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+a.control_prev:hover, a.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+}
+
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.slider_option {
+  position: relative;
+  margin: 10px auto;
+  width: 160px;
+  font-size: 18px;
+}
+
+
+
+
+
+
 /* from
 
  http://stackoverflow.com/questions/2812770/add-centered-text-to-the-middle-of-a-hr-like-line 
@@ -55,6 +234,12 @@
     color: #FF931E;
 }
 
+.separator-grey {
+    text-align: center;
+    height: 0.5em;
+    border-bottom: 2px solid grey;
+    margin-bottom: 0.5em;
+}
 
 .clearfix {
   *zoom: 1;
@@ -295,16 +480,17 @@ body {
 #logo {
    font-size: 30px;  
    line-height: 40px;    
-   padding: 5px;
+   padding: 0px; /*  was 5px */
 }
 #navWrap {
    height: 50px;
 }
 #nav {
-   padding: 10px;
+   padding: 0px; /* this was 10px which caused the nav bar to shorten every time it clipped the top of the page */
    color: #fff;  /* << I added this */
    text-align: center;     /* << add this */
    background: #ff931e;
+   height: 60px; /* << I added this */
 }
 #navGrey {
    padding: 10px;
@@ -336,7 +522,7 @@ body {
    background: #ff931e;  
 }
 #nav ul {
-   margin: 0;
+   margin: 15px; /* << add this */
    padding: 0;
    display: inline-block;     /* << add this */
    vertical-align: top;       /* << add this */    
