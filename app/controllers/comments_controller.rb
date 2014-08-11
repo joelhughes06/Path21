@@ -3,8 +3,9 @@ class CommentsController < ApplicationController
 	def create
 		@post = Post.find(params[:post_id])
 		@comment = Comment.new(params.require(:comment).permit!)
+		@comment.post = @post
 		if @comment.save
-			flash[:notice] = "Your comment will appear shortly."
+			flash[:success] = "Thanks, your comment will appear shortly."
 			redirect_to root_path
 		else
 			render :new
