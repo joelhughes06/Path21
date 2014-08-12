@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'posts#index'
 
+  get '/user_login_21', to: 'sessions#new'
+  post '/user_login_21', to: 'sessions#create'
+  get '/user_logout_21', to: 'sessions#destroy'
   resources :users
 
   resources :posts do
