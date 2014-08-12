@@ -454,15 +454,20 @@ jQuery(document).ready(function ($) {
         <% end %>
       <br/>
       <br/>
+      <% if logged_in? %>
       <%= render 'posts/form' %>
       <%= link_to 'Logout', user_logout_21_path, class: 'btn btn-small' %>
+      <% end %>
       <br/>
       <br/>
     </div>
   </div>
 </div>
-  <div id="footer" class="black-banner">
-    Copyright © Path21 Architecture
+  <div class='row-fluid'>
+    <div class="span9"></div>
+    <div id="footer" class="span3; black-banner; pull-right">
+      Copyright © Path21 Architecture     
+    </div>
   </div>
 </div>
 
