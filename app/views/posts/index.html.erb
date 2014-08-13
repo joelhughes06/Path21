@@ -347,45 +347,45 @@ jQuery(document).ready(function ($) {
       <div class='row-fluid'>
         <div style="width:65%;margin-left:auto;margin-right:auto;">
           <figure style="width: 240px; height: 250px; float: left; margin-right: 20px;margin-bottom: 10px;">
-            <img src="/assets/team_jim_jose.jpg">
+            <img src="/assets/team_jim_jose.jpg" style="width: 240px; height: 235px;">
             <figcaption>
-              <h3>About James Jose</h3>
+              <h3>James Jose</h3>
               <p>James holds a Masters in Architecture, is a LEED Accredited Professional, and member of the American Institute of Architects, having served as Colorado West Chapter President.</p>
             </figcaption>
           </figure>
           <figure style="width: 240px; height: 250px; float: left; margin-right: 20px;margin-bottom: 10px;">
-            <img src="/assets/team_bill_turner.jpg">
+            <img src="/assets/team_bill_turner.jpg" style="width: 240px; height: 235px;">
             <figcaption>
-              <h3>About Bill Turner</h3>
-              <p>Bill Turner earned his Masters of Architecture at the University of Colorado, Denver with honors following his B.A. in Business from the University of Denver.</p>
+              <h3>Bill Turner</h3>
+              <p>Bill earned his Masters of Architecture from the University of Colorado, Denver with honors, and is on the national board of directors for the American Institute of Architects.</p>
             </figcaption>
           </figure>
           <figure style="width: 240px; height: 250px; float: left; margin-right: 20px;margin-bottom: 10px;">
-            <img src="/assets/team_john_menno.png">
+            <img src="/assets/team_john_menno.png" style="width: 240px; height: 235px;">
             <figcaption>
-              <h3>About John Menno</h3>
-              <p>As Chief Operations Officer for Path21 Architecture, John Menno is responsible for the staffing and management of all projects as well as maintaining schedules.</p>
+              <h3>John Menno</h3>
+              <p>As Chief Operations Officer, John is responsible for staffing and managing all projects. He has over thirteen years of experience in architectural planning and design.</p>
             </figcaption>
           </figure>
           <figure style="width: 240px; height: 250px; float: left; margin-right: 20px;margin-bottom: 10px;">
-            <img src="/assets/team_stephanie_cooper.png">
+            <img src="/assets/team_stephanie_cooper.png" style="width: 240px; height: 235px;">
             <figcaption>
-              <h3>About Stephanie Cooper</h3>
-              <p>Stephanie is a project manager at Path 21 Architecture with 15 years of health care architecture experience.</p>
+              <h3>Stephanie Cooper</h3>
+              <p>Stephanie is a health care architecture project manager, including replacement facilities, multi-phased interior renovations, vertical expansions and additions.</p>
             </figcaption>
           </figure>
           <figure style="width: 240px; height: 250px; float: left; margin-right: 20px;margin-bottom: 10px;">
-            <img src="/assets/team_leo_spurgin.png">
+            <img src="/assets/team_leo_spurgin.png" style="width: 240px; height: 235px;">
             <figcaption>
-              <h3>About Leo Spurgin</h3>
-              <p>Leo Spurgin has a professional and educational background in healthcare facility design including hospitals, cancer centers, medical office buildings, and hospital renovations.</p>
+              <h3>Leo Spurgin</h3>
+              <p>Leo has a professional and educational background in healthcare facility design including hospitals, cancer centers, medical office buildings, and hospital renovations.</p>
             </figcaption>
           </figure>
           <figure style="width: 240px; height: 250px; float: left; margin-right: 20px;margin-bottom: 10px;">
-            <img src="/assets/team_emily_sinclair.png">
+            <img src="/assets/team_emily_sinclair.png" style="width: 240px; height: 235px;">
             <figcaption>
-              <h3>About Emily Sinclair</h3>
-              <p>Emily Sinclair combines professionalism and dedication to design excellence on every project, along with a genuine caring for each client and their requirements.</p>
+              <h3>Emily Sinclair</h3>
+              <p>Emily combines professionalism and dedication to design excellence on every project, along with a genuine caring for each client and their requirements.</p>
             </figcaption>
           </figure>                                                  
         </div>
@@ -445,7 +445,7 @@ jQuery(document).ready(function ($) {
             <br/>
             <p><%= post.description %></p><br/>
             </tr>
-            <small><%= link_to 'leave a comment', new_post_comment_path(post) %></small><br/>
+            <%= link_to image_tag('/assets/comment_bubble.png'), new_post_comment_path(post) %>
 <!--            <h4>Comments:</h4>   -->
             <% post.comments.each do |x| %>
             <p>"<%= x.comment %>"</p><small> by <%= x.commenter %><span class='quiet; pull-right'><%= display_datetime(x.created_at)%></span></small>

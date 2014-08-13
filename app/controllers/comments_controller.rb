@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
 		@post = Post.find(params[:post_id])
 		@comment = Comment.new(params.require(:comment).permit!)
 		@comment.post = @post
+		@ip = request.remote_ip
+		@comment.ip = @ip
 		if @comment.save
 			flash[:success] = "Thanks, your comment will appear shortly."
 			redirect_to root_path
@@ -15,6 +17,7 @@ class CommentsController < ApplicationController
 	def new
 		@post = Post.find(params[:post_id])
 		@comment = Comment.new
+		@ip = request.remote_ip
 	end
 
 	def index
