@@ -151,7 +151,7 @@ jQuery(document).ready(function ($) {
   </div>
 </div>
 <div class="row-fluid">
-  <div id="navClear" class="span12" style="height:200px;width:100%;float:left;color:inherit">
+  <div id="navClear" class="span12" style="height:200px;width:100%;float:left;color:black">
     <a name="services" class="smoothScroll"></a>
     <br/>
     <br/>
@@ -212,7 +212,7 @@ jQuery(document).ready(function ($) {
 <br/>
 
 <div class="row-fluid">
-  <div class="span12" style="height:250px;width:100%;float:left;">
+  <div class="span12" style="height:250px;width:100%;float:left;color:black">
   <a name="portfolio" class="smoothScroll"></a>
   <br/>
   <br/>
@@ -279,14 +279,14 @@ jQuery(document).ready(function ($) {
     <br/>
     <br/>
     <br/>
-      <h1 id="navClear"><div class="separator" style="color:inherit">PHILOSOPHY/PROCESS</div></h1>
+      <h1 id="navClear"><div class="separator" style="color:black">PHILOSOPHY/PROCESS</div></h1>
   </div>
 </div>
 <br/>
 
 <!-- <h1>Phlilosphy/Process</h1> -->
 
-<div id="slider">
+<div id="slider" style="position: relative; z-index: 1;">
   <a class="control_next">></a>
   <a class="control_prev"><</a>
   <ul>
@@ -339,7 +339,7 @@ jQuery(document).ready(function ($) {
       <br/>
       <br/>
     <h1 id="navClear">
-      <div class="separator-orange">TEAM</div>
+      <div class="separator-orange" style="color:black">TEAM</div>
     </h1>
     </a>
       <br/>
@@ -436,13 +436,13 @@ jQuery(document).ready(function ($) {
   <div class="span12" >
     <a name="blog" class="smoothScroll"></a>
     <div class="span3"></div>
-    <div class="well span6">
+    <div class="well span6" style="color:black">
       <h2>Path21 Architecture Blog</h2>
         <% @posts.order("created_at desc").each do |post| %>
             <tr>
-            <p><strong><h3><%= post.title %></h3></strong>
-            <span class='quiet; pull-right'><small><%= display_datetime(post.created_at) %></td></small></span></p>
-            <br/>
+            <p><strong><h3><%= post.title %></h3></strong></p>
+            <img src='/assets/<%= post.image %>' style='height: 300px' >
+            <p><span class='quiet'><small><%= display_datetime(post.created_at) %></small></span></p>
             <p><%= post.description %></p><br/>
             </tr>
             <%= link_to image_tag('/assets/like.png', :action => 'record_a_vote', :method => :post) %>
