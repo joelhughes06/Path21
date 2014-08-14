@@ -445,7 +445,8 @@ jQuery(document).ready(function ($) {
             <br/>
             <p><%= post.description %></p><br/>
             </tr>
-            <%= link_to image_tag('/assets/comment_bubble.png'), new_post_comment_path(post) %>
+            <%= link_to image_tag('/assets/like.png', :action => 'record_a_vote', :method => :post) %>
+            <span class='pull-right'><%= link_to image_tag('/assets/comment_bubble.png'), new_post_comment_path(post) %></span>
 <!--            <h4>Comments:</h4>   -->
             <% post.comments.each do |x| %>
             <p>"<%= x.comment %>"</p><small> by <%= x.commenter %><span class='quiet; pull-right'><%= display_datetime(x.created_at)%></span></small>
