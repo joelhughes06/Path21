@@ -14,7 +14,6 @@
  *= require_self
  */
 
-
 /*
 from http://www.dwuser.com/education/content/creating-a-floating-navigation-menu/
 */
@@ -66,7 +65,7 @@ body {
 }
 br.clearLeft {
    clear: left;        
-
+}
 #sidebar {
     width:300px;
     float:left;

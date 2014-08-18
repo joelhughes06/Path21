@@ -26,15 +26,17 @@ class PostsController < ApplicationController
 	end
 
 	def record_a_vote  
-	  post_id = params[:post_id]  
-	  voter_ip = request.remote_ip  
-	  voter_ip.post_id = post_id
+		@vote = Vote.new[params.require(:voter_ip).permit!]
+	  @post = Post.find[params(:post_id)]
+	  @vote_id = params[:vote_id]  
+	  @voter_ip = request.remote_ip  
+	  @vote.post_id = @post
 	  unless Vote.count(:all, :conditions => ['post_id = ? AND voter_ip = ?', post_id, voter_ip]) == 0  
 	    redirect_to :already_voted  
 	  end  
 	  
-	  Post.find(post_id).record_vote(params[:post]) # Or however you count votes  
-	  Vote.create(:post_id => post_id, :voter_ip => voter_ip)  
+	  Post.find(post_id).record_vote(params[:post])
+	  Vote.create(:post_id => @post, :voter_ip => @voter_ip)  
 	end  
 	  
 	def already_voted  

@@ -6,6 +6,9 @@ class CommentsController < ApplicationController
 		@comment.post = @post
 		@ip = request.remote_ip
 		@comment.ip = @ip
+		respond_to do |format|
+  	format.html { render layout: !request.xhr? }
+  	end
 		if @comment.save
 			flash[:success] = "Thanks, your comment will appear shortly."
 			redirect_to root_path

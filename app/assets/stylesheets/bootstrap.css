@@ -9,9 +9,6 @@
  */
 
 
-
-
-
 /* http://www.elated.com/res/File/articles/authoring/css/smooth-fading-image-captions-with-pure-css3/ */
 figure {
   position: relative;
@@ -87,6 +84,14 @@ figcaption, h1, h2, h3, h4 {
 
 
 
+
+#blueprint {
+  margin: 0;
+  background: url('/assets/marina_park_4.png');
+
+  background-repeat:repeat;
+  display: compact;
+}
 
 
 
@@ -181,8 +186,13 @@ a.control_next {
   font-size: 18px;
 }
 
+/* http://stackoverflow.com/questions/10879955/how-to-align-an-image-dead-center-with-bootstrap */
 
-
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
 
 
 
@@ -204,7 +214,7 @@ a.control_next {
     margin-bottom: 0.5em;
 }
 .separator:first-line {
-    background-color: #eee;
+    background-color: none;
 }
 .separator:before {
     content: "___";
@@ -508,9 +518,9 @@ body {
 }
 #navClear {
    padding: 10px;
-   color: ;  /* << I added this */
+   color: none;  /* << I added this */
    text-align: center;     /* << add this */
-   background: ;
+   background: none;
    margin:0 auto; /* << add this */
    float:none;    /* << add this */    
 }
@@ -530,7 +540,7 @@ body {
 #nav li {
    float: left;
    padding: 3px 8px;
-   background-color: ;
+   background-color: none;
    margin: 0 10px 0 0;
    color: #F00;
    list-style-type: none;
@@ -558,7 +568,7 @@ br.clearLeft {
     display : inline-block;
 }
 
-.text-align: justify;   /* << I added this */
+/*.text-align: justify;    << I added this */
 
 
 
